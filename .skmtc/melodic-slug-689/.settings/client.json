@@ -1,0 +1,7 @@
+{
+  "deploymentId": "m5jv4c9e1j0g",
+  "settings": {
+    "basePath": "supabase/functions",
+    "enrichments": {}
+  }
+}

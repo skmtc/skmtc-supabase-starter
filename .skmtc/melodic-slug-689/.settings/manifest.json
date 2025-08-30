@@ -1,0 +1,61 @@
+{
+  "deploymentId": "m5jv4c9e1j0g",
+  "traceId": "574b73947efe47d6afb7b3ea5686f409",
+  "spanId": "b2853fe5f55e7d07",
+  "region": "europe-west2",
+  "files": {
+    "dogs/api.generated.ts": {
+      "lines": 99,
+      "characters": 1675,
+      "destinationPath": "@/dogs/api.generated.ts"
+    },
+    "_shared/models/dogList.generated.ts": {
+      "lines": 7,
+      "characters": 158,
+      "destinationPath": "@/_shared/models/dogList.generated.ts"
+    },
+    "_shared/models/dog.generated.ts": {
+      "lines": 7,
+      "characters": 246,
+      "destinationPath": "@/_shared/models/dog.generated.ts"
+    },
+    "_shared/models/breed.generated.ts": {
+      "lines": 6,
+      "characters": 151,
+      "destinationPath": "@/_shared/models/breed.generated.ts"
+    }
+  },
+  "previews": {},
+  "mappings": {},
+  "results": {
+    "b2853fe5f55e7d07": {
+      "generate": {
+        "@skmtc/gen-supabase-hono": {
+          "/dogs": {
+            "get": "success",
+            "post": "success",
+            "put": "success"
+          }
+        },
+        "@skmtc/gen-zod": {
+          "Breed": "success",
+          "Dog": "success",
+          "DogList": "success"
+        },
+        "@skmtc/gen-typescript": {
+          "Breed": "success",
+          "Dog": "success",
+          "DogList": "success"
+        }
+      },
+      "render": {
+        "@/dogs/api.generated.ts": "success",
+        "@/_shared/models/dogList.generated.ts": "success",
+        "@/_shared/models/dog.generated.ts": "success",
+        "@/_shared/models/breed.generated.ts": "success"
+      }
+    }
+  },
+  "startAt": 1756236257308,
+  "endAt": 1756236257333
+}

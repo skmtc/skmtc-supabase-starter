@@ -1,0 +1,7 @@
+{
+  "nodeModulesDir": "none",
+  "imports": {
+    "@/": "./functions/",
+    "zod": "npm:zod@4.0.14"
+  }
+}

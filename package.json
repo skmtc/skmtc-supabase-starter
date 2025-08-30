@@ -1,0 +1,43 @@
+{
+  "name": "my-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "skmtc": "deno run --unstable-kv --allow-read=./ --allow-write=./ --allow-env --allow-sys --allow-net=*.sentry.io,jsr.io,*.deno.dev,0.0.0.0:9000,api.skm.tc jsr:@skmtc/cli",
+    "build:api": "tsp compile ./api",
+    "format:api": "tsp format ./api/**/*.tsp",
+    "lint:api": "tsp compile ./api --no-emit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.56.0",
+    "@tanstack/react-query": "^5.85.5",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "zod": "^4.1.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@typespec/compiler": "latest",
+    "@typespec/http": "latest",
+    "@typespec/json-schema": "latest",
+    "@typespec/openapi": "latest",
+    "@typespec/openapi3": "latest",
+    "@typespec/prettier-plugin-typespec": "latest",
+    "@typespec/rest": "latest",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^7.1.2"
+  }
+}
