@@ -10,7 +10,7 @@ This repo includes code generators for:
 - Backend: Supabase Edge Functions with Hono, Zod and TypeScript
 
 
-![Supabase codegen demo](./docs/supabase-demo.mp4)
+![Supabase codegen demo](./docs/supabase-demo.gif)
 
 
 ---
