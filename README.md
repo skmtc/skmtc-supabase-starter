@@ -1,6 +1,9 @@
 # Supabase Starter with Skmtc codegen
 
 Instantly generate typesafe Supabase Edge Functions with Hono and Tanstack Query clients direct from API schema. 
+
+![Supabase codegen demo](./docs/supabase-demo.gif)
+
 - 🛑 No more API drift
 - 🧹 No more cleaning up LLM generated mess
 - 🔄 No more manual code updates in 27 places
@@ -8,10 +11,6 @@ Instantly generate typesafe Supabase Edge Functions with Hono and Tanstack Query
 This repo includes code generators for:
 - Frontend: Tanstack React Query hooks, Zod and TypeScript
 - Backend: Supabase Edge Functions with Hono, Zod and TypeScript
-
-
-![Supabase codegen demo](./docs/supabase-demo.gif)
-
 
 ---
 
