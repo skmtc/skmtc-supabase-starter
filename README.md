@@ -1,106 +1,83 @@
-# ⚡ SKMTC Supabase Starter
+# SKMTC Supabase Starter
 
-**Ship typesafe Supabase apps at lightning speed** ⚡
+A TypeScript starter that generates your client and server code from a single API definition.
 
-Write your API once, get typesafe client and server code everywhere. No more manual type juggling, no more client-server sync headaches.
+If you're building with Supabase and tired of keeping types in sync between your frontend and backend, this might help.
 
 ---
 
-## 🎯 Perfect for Supabase developers who are tired of...
+## The problem
 
-- ❌ **Writing the same types twice** (client + server)
-- ❌ **Manually keeping APIs in sync** across frontend and backend
-- ❌ **Boilerplate hell** for every new endpoint
-- ❌ **Runtime type errors** that could have been caught at compile time
-- ❌ **Context switching** between writing server logic and client queries
+When building full-stack apps, you end up writing the same types and validation logic multiple times:
 
-## ✨ What you get instead
+- Define your API endpoints on the server
+- Write corresponding TypeScript types for the client  
+- Create validation schemas for runtime checks
+- Build data fetching hooks for your React components
+- Keep everything synchronized when things change
 
-- ✅ **Single source of truth** - Define your API once in TypeSpec
-- ✅ **Full-stack type safety** - From database to UI components
-- ✅ **Auto-generated everything** - Server handlers, client hooks, validation schemas
-- ✅ **Modern stack** - React 19, Vite, TanStack Query, Supabase Edge Functions
-- ✅ **Zero config** - Everything just works out of the box
+This gets tedious fast, and it's easy for things to drift out of sync.
 
-## 🚀 Quick Start
+## How this works
 
-### 1. Get the code
+Instead of writing everything multiple times, you define your API once using [TypeSpec](https://typespec.io/) (think OpenAPI but with better TypeScript integration). Then SKMTC generates:
+
+- React Query hooks for data fetching
+- Zod schemas for validation
+- Supabase Edge Functions with proper typing
+- All the TypeScript interfaces you need
+
+When you change your API definition, regenerate the code and everything stays in sync.
+
+## 🚀 Getting started
+
+### Prerequisites
+- A Supabase project with your `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
+- Node.js and pnpm
+
+### Setup
 ```bash
 git clone https://github.com/your-username/skmtc-supabase-starter
 cd skmtc-supabase-starter
 pnpm install
-```
 
-### 2. Set up Supabase
-```bash
 # Add your Supabase credentials
 cp .env.example .env.local
-# Edit .env.local with your VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY
+# Edit .env.local with your credentials
 ```
 
-### 3. Generate your first API
+### Generate your first API
 ```bash
-# Deploy generators (first time only)
+# First time setup
 pnpm run skmtc deploy
 
-# Generate client and server code
+# Generate code from your TypeSpec definitions
 pnpm run skmtc generate
 
-# Start developing
+# Start the dev server
 pnpm run dev
 ```
 
-### 4. See the magic ✨
-Open `api/petstore-dogs.tsp` and see how a simple API definition becomes:
-- 🎯 Typesafe React Query hooks in your frontend
-- 🛡️ Zod validation schemas 
-- ⚡ Hono-powered Supabase Edge Functions
-- 📝 Full TypeScript types everywhere
+### See what you get
 
-## 🏗️ How it works
+Check out `api/petstore-dogs.tsp` - it's a simple API definition that becomes:
 
-```mermaid
-graph LR
-    A[📝 TypeSpec API] --> B[🔧 SKMTC Generator]
-    B --> C[⚛️ React Hooks]
-    B --> D[🛡️ Zod Schemas]
-    B --> E[⚡ Supabase Functions]
-    B --> F[📋 TypeScript Types]
-```
-
-1. **Define once** - Write your API in TypeSpec (like OpenAPI, but better)
-2. **Generate everywhere** - SKMTC creates typesafe code for client and server
-3. **Ship fast** - No manual sync, no runtime errors, just pure productivity
+- 🎯 Typesafe React Query hooks (in `src/`)
+- 🛡️ Runtime validation with Zod 
+- ⚡ Supabase Edge Functions (in `supabase/functions/`)
+- 📝 Full TypeScript types throughout
 
 ## 📦 What's included
 
-### Frontend Stack
-- **React 19** - Latest React with concurrent features
-- **Vite** - Lightning fast dev server and builds  
-- **TanStack Query** - Powerful data fetching (auto-generated hooks!)
-- **TypeScript** - Full type safety from API to components
+**Frontend:** React 19, Vite, TanStack Query, TypeScript  
+**Backend:** Supabase, Hono (for Edge Functions)  
+**Tooling:** ESLint, Prettier, TypeSpec
 
-### Backend Stack  
-- **Supabase** - Database, auth, and hosting
-- **Hono** - Fast web framework for Edge Functions
-- **Zod** - Runtime type validation (auto-generated schemas!)
+## Example workflow
 
-### Developer Experience
-- **Hot reload** - Changes appear instantly
-- **Type safety** - Catch errors at compile time
-- **Auto-completion** - Perfect IntelliSense everywhere
-- **ESLint + Prettier** - Consistent, beautiful code
+Let's say you want to add a new endpoint to get a specific dog:
 
-## 🎮 Try it yourself
-
-1. **Edit an API** - Open `api/petstore-dogs.tsp` and add a new endpoint
-2. **Regenerate** - Run `pnpm run skmtc generate` 
-3. **Use it** - Import the generated hook in your React component
-4. **Deploy** - Push to Supabase and you're live!
-
-## 🔍 Example: Adding a new endpoint
-
-**1. Define in TypeSpec:**
+**1. Edit your API definition:**
 ```typescript
 // api/petstore-dogs.tsp
 @get
@@ -108,35 +85,44 @@ graph LR
 op getDog(@path id: string): Dog | NotFound;
 ```
 
-**2. Generate code:**
+**2. Regenerate:**
 ```bash
 pnpm run skmtc generate
 ```
 
-**3. Use in React:**
+**3. Use it in React:**
 ```tsx
-// Automatically generated and typesafe!
 import { useGetDog } from './generated.hooks'
 
 function DogProfile({ dogId }: { dogId: string }) {
   const { data: dog, isLoading } = useGetDog({ id: dogId })
-  // `dog` is fully typed as Dog | undefined
-  return <div>{dog?.name}</div>
+  
+  if (isLoading) return <div>Loading...</div>
+  if (!dog) return <div>Dog not found</div>
+  
+  return <div>{dog.name} is a {dog.breed}</div>
 }
 ```
 
-**4. Server handles it automatically** - The Supabase Edge Function is generated and deployed!
+The server-side handler is automatically generated and deployed as a Supabase Edge Function.
 
-## 🛟 Getting help
+## Important notes
+
+- Don't edit files with `*.generated.*` in the name - they get overwritten
+- The `.skmtc/` folder contains the code generators, not the generated output
+- Run `pnpm run build:api` after editing TypeSpec files
+- Your generated code lives in `src/` and `supabase/functions/`
+
+## 🛟 Need help?
 
 - 📚 [SKMTC Documentation](https://skmtc.dev/docs)
-- 💬 [GitHub Discussions](https://github.com/skmtc/skmtc/discussions)
-- 🐛 [Report Issues](https://github.com/your-username/skmtc-supabase-starter/issues)
+- 💬 [GitHub Discussions](https://github.com/skmtc/skmtc/discussions)  
+- 🐛 [Issues](https://github.com/your-username/skmtc-supabase-starter/issues)
 
-## 📄 License
+## License
 
-MIT License - build amazing things! 🚀
+MIT - do what you want with it.
 
 ---
 
-**Ready to ship faster?** ⭐ Star this repo and start building your next Supabase app with confidence!
+If this saves you time, consider starring the repo 🙂
