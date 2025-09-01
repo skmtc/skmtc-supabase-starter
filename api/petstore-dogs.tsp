@@ -10,21 +10,6 @@ interface Dogs {
   @summary("Get dog by id")
   @doc("Get a dog by id")
   get(@path id: string): Dog;
-
-  @get
-  @summary("Get all dogs")
-  @doc("List of all dogs in store")
-  list(@summary("Filter results by name") @query name?: string): DogList;
-
-  @post
-  @summary("Create new dog")
-  @doc("Add a new dog to store.")
-  create(@body body: Dog): Dog;
-
-  @put
-  @summary("Update dog")
-  @doc("Add a new dog to store.")
-  update(@body body: Dog): Dog;
 }
 
 @example(archie)

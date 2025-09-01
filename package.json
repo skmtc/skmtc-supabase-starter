@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "skmtc": "deno run --unstable-kv --allow-read=./ --allow-write=./ --allow-env --allow-sys --allow-net=*.sentry.io,jsr.io,*.deno.dev,0.0.0.0:9000,api.skm.tc jsr:@skmtc/cli",
+    "skmtc": "skmtc",
     "build:api": "tsp compile ./api",
     "format:api": "tsp format ./api/**/*.tsp",
     "lint:api": "tsp compile ./api --no-emit"
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "skmtc": "^0.0.179",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@typespec/compiler": "latest",

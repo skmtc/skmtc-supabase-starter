@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@skmtc/core": "jsr:@skmtc/core@^0.0.756",
+    "@skmtc/gen-tanstack-query-supabase-zod": "./gen-tanstack-query-supabase-zod/mod.ts",
+    "@skmtc/gen-zod": "./gen-zod/mod.ts",
+    "@skmtc/gen-typescript": "./gen-typescript/mod.ts",
+    "@std/path": "jsr:@std/path@^1.0.6",
+    "ts-pattern": "npm:ts-pattern@^5.8.0",
+    "tiny-invariant": "npm:tiny-invariant@^1.3.3"
+  },
+  "workspace": ["./gen-tanstack-query-supabase-zod", "./gen-typescript", "./gen-zod"]
+}

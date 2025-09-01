@@ -2,6 +2,9 @@
   "nodeModulesDir": "none",
   "imports": {
     "@/": "./functions/",
-    "zod": "npm:zod@4.0.14"
+    "zod": "npm:zod@^4.0.14",
+    "hono": "npm:hono@^4.5.6",
+    "@hono/sentry": "npm:@hono/sentry@^1.2.0",
+    "@supabase/supabase-js": "npm:@supabase/supabase-js@^2.56.1"
   }
 }
