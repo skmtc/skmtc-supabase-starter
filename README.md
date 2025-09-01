@@ -1,28 +1,28 @@
-# ¡ SKMTC Supabase Starter
+# âš¡ SKMTC Supabase Starter
 
-**Ship typesafe Supabase apps at lightning speed** ¡
+**Ship typesafe Supabase apps at lightning speed** âš¡
 
 Write your API once, get typesafe client and server code everywhere. No more manual type juggling, no more client-server sync headaches.
 
 ---
 
-## <¯ Perfect for Supabase developers who are tired of...
+## ðŸŽ¯ Perfect for Supabase developers who are tired of...
 
-- L **Writing the same types twice** (client + server)
-- L **Manually keeping APIs in sync** across frontend and backend
-- L **Boilerplate hell** for every new endpoint
-- L **Runtime type errors** that could have been caught at compile time
-- L **Context switching** between writing server logic and client queries
+- âŒ **Writing the same types twice** (client + server)
+- âŒ **Manually keeping APIs in sync** across frontend and backend
+- âŒ **Boilerplate hell** for every new endpoint
+- âŒ **Runtime type errors** that could have been caught at compile time
+- âŒ **Context switching** between writing server logic and client queries
 
-## ( What you get instead
+## âœ¨ What you get instead
 
--  **Single source of truth** - Define your API once in TypeSpec
--  **Full-stack type safety** - From database to UI components
--  **Auto-generated everything** - Server handlers, client hooks, validation schemas
--  **Modern stack** - React 19, Vite, TanStack Query, Supabase Edge Functions
--  **Zero config** - Everything just works out of the box
+- âœ… **Single source of truth** - Define your API once in TypeSpec
+- âœ… **Full-stack type safety** - From database to UI components
+- âœ… **Auto-generated everything** - Server handlers, client hooks, validation schemas
+- âœ… **Modern stack** - React 19, Vite, TanStack Query, Supabase Edge Functions
+- âœ… **Zero config** - Everything just works out of the box
 
-## =€ Quick Start
+## ðŸš€ Quick Start
 
 ### 1. Get the code
 ```bash
@@ -50,29 +50,29 @@ pnpm run skmtc generate
 pnpm run dev
 ```
 
-### 4. See the magic (
+### 4. See the magic âœ¨
 Open `api/petstore-dogs.tsp` and see how a simple API definition becomes:
-- <¯ Typesafe React Query hooks in your frontend
-- =á Zod validation schemas 
-- ¡ Hono-powered Supabase Edge Functions
-- =Ý Full TypeScript types everywhere
+- ðŸŽ¯ Typesafe React Query hooks in your frontend
+- ðŸ›¡ï¸ Zod validation schemas 
+- âš¡ Hono-powered Supabase Edge Functions
+- ðŸ“ Full TypeScript types everywhere
 
-## <× How it works
+## ðŸ—ï¸ How it works
 
 ```mermaid
 graph LR
-    A[=Ý TypeSpec API] --> B[=' SKMTC Generator]
-    B --> C[› React Hooks]
-    B --> D[=á Zod Schemas]
-    B --> E[¡ Supabase Functions]
-    B --> F[=Ë TypeScript Types]
+    A[ðŸ“ TypeSpec API] --> B[ðŸ”§ SKMTC Generator]
+    B --> C[âš›ï¸ React Hooks]
+    B --> D[ðŸ›¡ï¸ Zod Schemas]
+    B --> E[âš¡ Supabase Functions]
+    B --> F[ðŸ“‹ TypeScript Types]
 ```
 
 1. **Define once** - Write your API in TypeSpec (like OpenAPI, but better)
 2. **Generate everywhere** - SKMTC creates typesafe code for client and server
 3. **Ship fast** - No manual sync, no runtime errors, just pure productivity
 
-## =æ What's included
+## ðŸ“¦ What's included
 
 ### Frontend Stack
 - **React 19** - Latest React with concurrent features
@@ -91,14 +91,14 @@ graph LR
 - **Auto-completion** - Perfect IntelliSense everywhere
 - **ESLint + Prettier** - Consistent, beautiful code
 
-## <® Try it yourself
+## ðŸŽ® Try it yourself
 
 1. **Edit an API** - Open `api/petstore-dogs.tsp` and add a new endpoint
 2. **Regenerate** - Run `pnpm run skmtc generate` 
 3. **Use it** - Import the generated hook in your React component
 4. **Deploy** - Push to Supabase and you're live!
 
-## = Example: Adding a new endpoint
+## ðŸ” Example: Adding a new endpoint
 
 **1. Define in TypeSpec:**
 ```typescript
@@ -127,16 +127,16 @@ function DogProfile({ dogId }: { dogId: string }) {
 
 **4. Server handles it automatically** - The Supabase Edge Function is generated and deployed!
 
-## =ß Getting help
+## ðŸ›Ÿ Getting help
 
-- =Ú [SKMTC Documentation](https://skmtc.dev/docs)
-- =¬ [GitHub Discussions](https://github.com/skmtc/skmtc/discussions)
-- = [Report Issues](https://github.com/your-username/skmtc-supabase-starter/issues)
+- ðŸ“š [SKMTC Documentation](https://skmtc.dev/docs)
+- ðŸ’¬ [GitHub Discussions](https://github.com/skmtc/skmtc/discussions)
+- ðŸ› [Report Issues](https://github.com/your-username/skmtc-supabase-starter/issues)
 
-## =Ä License
+## ðŸ“„ License
 
-MIT License - build amazing things! =€
+MIT License - build amazing things! ðŸš€
 
 ---
 
-**Ready to ship faster?** P Star this repo and start building your next Supabase app with confidence!
+**Ready to ship faster?** â­ Star this repo and start building your next Supabase app with confidence!
