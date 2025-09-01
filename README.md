@@ -1,4 +1,4 @@
-# SKMTC Supabase Starter
+# Supabase Starter with Skmtc codegen
 
 A TypeScript starter that generates your client and server code from a single API definition.
 
