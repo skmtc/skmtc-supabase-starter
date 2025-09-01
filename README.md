@@ -9,6 +9,10 @@ This repo includes code generators for:
 - Frontend: Tanstack React Query hooks, Zod and TypeScript
 - Backend: Supabase Edge Functions with Hono, Zod and TypeScript
 
+
+![Supabase codegen demo](./docs/supabase-demo.mp4)
+
+
 ---
 
 ## The problem
@@ -49,7 +53,10 @@ pnpm install
 
 ### Generate your first API
 ```bash
-# First time setup
+# Login to Skmtc - first time only
+pnpm skmtc login 
+
+# Deploy code generators - first time only
 pnpm skmtc deploy
 
 # Generate code from your TypeSpec definitions
