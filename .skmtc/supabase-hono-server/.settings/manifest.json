@@ -1,7 +1,7 @@
 {
-  "deploymentId": "y5mytc9wbded",
-  "traceId": "d33c4a5d322f47f092983bc4d93d2dc1",
-  "spanId": "8bb07a66946ea79d",
+  "deploymentId": "ax8pjzfsgazv",
+  "traceId": "d71829f2cc8f4227a9b59d9b0d6d964d",
+  "spanId": "90f7e097d8e9ad4b",
   "region": "europe-west2",
   "files": {
     "dogs/api.generated.ts": {
@@ -28,7 +28,7 @@
   "previews": {},
   "mappings": {},
   "results": {
-    "8bb07a66946ea79d": {
+    "90f7e097d8e9ad4b": {
       "generate": {
         "@skmtc/gen-supabase-hono": {
           "/dogs/{id}": {
@@ -54,6 +54,6 @@
       }
     }
   },
-  "startAt": 1756733865724,
-  "endAt": 1756733865735
+  "startAt": 1756742928182,
+  "endAt": 1756742928501
 }

@@ -1,13 +1,13 @@
 {
-  "deploymentId": "zfmdx52wy6t0",
-  "traceId": "ff2cc341fd5c467e9925343057614608",
-  "spanId": "af03306b34edb8eb",
+  "deploymentId": "rdyvpv4n98rv",
+  "traceId": "3354a7841b36405685f31826b9aefda2",
+  "spanId": "8ef1edb5b579aa58",
   "region": "europe-west2",
   "files": {
-    "services/dogs.generated.ts": {
+    "services/useGetApiDogsId.generated.ts": {
       "lines": 25,
       "characters": 569,
-      "destinationPath": "@/services/dogs.generated.ts"
+      "destinationPath": "@/services/useGetApiDogsId.generated.ts"
     },
     "models/dog.generated.ts": {
       "lines": 11,
@@ -28,7 +28,7 @@
   "previews": {},
   "mappings": {},
   "results": {
-    "af03306b34edb8eb": {
+    "8ef1edb5b579aa58": {
       "generate": {
         "@skmtc/gen-tanstack-query-supabase-zod": {
           "/dogs/{id}": {
@@ -47,13 +47,13 @@
         }
       },
       "render": {
-        "@/services/dogs.generated.ts": "success",
+        "@/services/useGetApiDogsId.generated.ts": "success",
         "@/models/dog.generated.ts": "success",
         "@/models/breed.generated.ts": "success",
         "@/models/dogList.generated.ts": "success"
       }
     }
   },
-  "startAt": 1756733865725,
-  "endAt": 1756733865735
+  "startAt": 1756742928306,
+  "endAt": 1756742928644
 }

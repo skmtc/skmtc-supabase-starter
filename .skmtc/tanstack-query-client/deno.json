@@ -8,5 +8,9 @@
     "ts-pattern": "npm:ts-pattern@^5.8.0",
     "tiny-invariant": "npm:tiny-invariant@^1.3.3"
   },
-  "workspace": ["./gen-tanstack-query-supabase-zod", "./gen-typescript", "./gen-zod"]
+  "workspace": [
+    "./gen-tanstack-query-supabase-zod",
+    "./gen-typescript",
+    "./gen-zod"
+  ]
 }
