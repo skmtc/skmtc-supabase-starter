@@ -1,8 +1,13 @@
 # Supabase Starter with Skmtc codegen
 
-A TypeScript starter that generates your client and server code from a single API definition.
+Instantly generate typesafe Supabase Edge Functions with Hono and Tanstack Query clients direct from API schema. 
+- 🛑 No more API drift
+- 🧹 No more cleaning up LLM generated mess
+- 🔄 No more manual code updates in 27 places
 
-If you're building with Supabase and tired of keeping types in sync between your frontend and backend, this might help.
+This repo includes code generators for:
+- Frontend: Tanstack React Query hooks, Zod and TypeScript
+- Backend: Supabase Edge Functions with Hono, Zod and TypeScript
 
 ---
 
@@ -20,7 +25,7 @@ This gets tedious fast, and it's easy for things to drift out of sync.
 
 ## How this works
 
-Instead of writing everything multiple times, you define your API once using [TypeSpec](https://typespec.io/) (think OpenAPI but with better TypeScript integration). Then SKMTC generates:
+Instead of writing everything multiple times, you define your [API](/api/) once using [TypeSpec](https://typespec.io/) (think OpenAPI but with better TypeScript integration). Then SKMTC generates:
 
 - React Query hooks for data fetching
 - Zod schemas for validation
@@ -32,30 +37,39 @@ When you change your API definition, regenerate the code and everything stays in
 ## 🚀 Getting started
 
 ### Prerequisites
-- A Supabase project with your `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
+- A Supabase project
 - Node.js and pnpm
 
 ### Setup
 ```bash
-git clone https://github.com/your-username/skmtc-supabase-starter
+git clone https://github.com/skmtc/skmtc-supabase-starter
 cd skmtc-supabase-starter
 pnpm install
-
-# Add your Supabase credentials
-cp .env.example .env.local
-# Edit .env.local with your credentials
 ```
 
 ### Generate your first API
 ```bash
 # First time setup
-pnpm run skmtc deploy
+pnpm skmtc deploy
 
 # Generate code from your TypeSpec definitions
-pnpm run skmtc generate
+pnpm skmtc generate
+```
 
-# Start the dev server
-pnpm run dev
+### Add environment variables
+
+Front end: Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in `.env`
+Backend: Set `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` in `supabase/functions/.env`
+
+### Run the app
+
+```bash
+# Start Vite dev server
+pnpm dev
+
+# Start Supabase dev server
+supabase start
+supabase functions serve
 ```
 
 ### See what you get
@@ -73,7 +87,7 @@ Check out `api/petstore-dogs.tsp` - it's a simple API definition that becomes:
 **Backend:** Supabase, Hono (for Edge Functions)  
 **Tooling:** ESLint, Prettier, TypeSpec
 
-## Example workflow
+## Example workflows
 
 Let's say you want to add a new endpoint to get a specific dog:
 
@@ -87,30 +101,20 @@ op getDog(@path id: string): Dog | NotFound;
 
 **2. Regenerate:**
 ```bash
-pnpm run skmtc generate
+# Compile TypeSpec to OpenAPI
+pnpm build:api
+
+# Run code generators
+pnpm skmtc generate
 ```
 
-**3. Use it in React:**
-```tsx
-import { useGetDog } from './generated.hooks'
-
-function DogProfile({ dogId }: { dogId: string }) {
-  const { data: dog, isLoading } = useGetDog({ id: dogId })
-  
-  if (isLoading) return <div>Loading...</div>
-  if (!dog) return <div>Dog not found</div>
-  
-  return <div>{dog.name} is a {dog.breed}</div>
-}
-```
-
-The server-side handler is automatically generated and deployed as a Supabase Edge Function.
+If you want to customize the generated code, you can edit the code generators in `.skmtc/`. Be sure to run `pnpm skmtc deploy` to deploy the changes before running `pnpm skmtc generate` again.
 
 ## Important notes
 
 - Don't edit files with `*.generated.*` in the name - they get overwritten
 - The `.skmtc/` folder contains the code generators, not the generated output
-- Run `pnpm run build:api` after editing TypeSpec files
+- Run `pnpm build:api` after editing TypeSpec files
 - Your generated code lives in `src/` and `supabase/functions/`
 
 ## 🛟 Need help?
